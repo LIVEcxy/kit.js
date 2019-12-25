@@ -16,7 +16,7 @@
  */
 
 const util = {
-  isType: (value = undefined) => {
+  isType(value = undefined) {
     try {
       if (typeof value !== "object") {
         return typeof value;
@@ -30,13 +30,13 @@ const util = {
       throw `unknown type, value:"${value}"`;
     }
   },
-  isEmpty: function (value = "") {
+  isEmpty(value = "") {
     if (typeof value === "object") {
       return this.isEmptyObj(value);
     }
     return "" + value === "" ? true : false;
   },
-  isEmptyObj: (obj = "") => {
+  isEmptyObj(obj = "") {
     if (typeof obj !== "object") {
       throw "isEmptyObj's parameter not Object or Array";
     } else {
@@ -45,13 +45,13 @@ const util = {
       return true;
     }
   },
-  getToDay: (d = new Date()) => {
-    return `${d.getFullYear()}-${d.getMonth() +1}-${d.getDate()} ${d.getHours()}:${d.getMinutes()}:${d.getSeconds()}`;
+  getToDay(d = new Date()) {
+    return `${d.getFullYear()}-${d.getMonth() + 1}-${d.getDate()} ${d.getHours()}:${d.getMinutes()}:${d.getSeconds()}`;
   },
-  getTimes: (d = new Date()) => {
+  getTimes(d = new Date()) {
     return Math.round(d / 1000);
   },
-  getNumber: (value = 0) => {
+  getNumber(value = 0) {
     return Math.round(value * 100) / 100;
   }
 };
