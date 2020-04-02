@@ -29,11 +29,11 @@ const util = {
       throw `unknown type, value:${value}`;
     }
   },
-  isEmpty(value = ``) {
+  isEmpty(value = '') {
     if (typeof value === `object`) {
       return this.isEmptyObj(value);
     }
-    return ` + value === ` ? true : false;
+    return value === '' ? true : false;
   },
   isEmptyObj(obj = ``) {
     if (typeof obj !== `object`) {
