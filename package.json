@@ -2,7 +2,7 @@
   "name": "kit-es6",
   "description": "kit util",
   "author": "liusm",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "main": "./dist/kit.js",
   "scripts": {
     "test": "echo test",

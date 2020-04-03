@@ -4,7 +4,7 @@
  *    小程序工具库
  *    支持es6 import {} 引入
  *    author: liusm
- *    version: 1.0.4
+ *    version: 1.0.5
  *    remarks: 规范代码
  *
  *    isType          用于精准判断数据类型
@@ -19,35 +19,23 @@
 
 
 const util = {
-  version: '1.0.4',
+  version: '1.0.5',
   author : 'liusm',
   isType(value = undefined) {
-      try {
-          const types = Object.prototype.toString.call(value);
+      const types = Object.prototype.toString.call(value);
 
-          if (types) return types.slice(8, -1);
-          throw `unknown type: $ {
-              types
-          },
-          value: $ {
-              value
-          }`;
-      } catch {
-          throw `unknown type,
-          value: $ {
-              value
-          }`;
-      }
+      if (types) return types.slice(8, -1);
+      throw `unknown type: ${types},value: ${value}`;
   },
-  isEmpty(value = ``) {
-      if (typeof value === `object`) {
+  isEmpty(value = '') {
+      if (typeof value === 'object') {
           return this.isEmptyObj(value);
       }
-      return ` + value === ` ? true : false;
+      return ('' + value) === '' ? true : false;
   },
-  isEmptyObj(obj = ``) {
-      if (typeof obj !== `object`) {
-          throw `isEmptyObj 's parameter not Object or Array`;
+  isEmptyObj(obj = '') {
+      if (typeof obj !== 'object') {
+          throw `isEmptyObj 's params not Object or Array`;
       } else {
           let name;
           for (name in obj) return false;
