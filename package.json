@@ -2,8 +2,8 @@
   "name": "kit-es6",
   "description": "kit util",
   "author": "liusm",
-  "version": "1.0.5",
-  "main": "./dist/kit.js",
+  "version": "1.0.8",
+  "main": "script/kit.js",
   "scripts": {
     "test": "echo test",
     "build": "webpack"
