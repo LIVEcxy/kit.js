@@ -54,7 +54,7 @@ const kit = {
             let searchArr = search.split('&');
 
             searchArr.map(item => {
-                query[item.split('=')[0]] = item.split('=')[1]
+                query[item.split('=')[0]] = unescape(item.split('=')[1])
             })
 
             let result = key ? query[key] : query;
