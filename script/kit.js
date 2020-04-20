@@ -47,18 +47,19 @@ const kit = {
         throw `unknown type: ${types},value: ${value}`;
     },
     getQuery(key = '') {
-        const url = location.search;
-        let query = {};
-        if (url.indexOf("?") != -1) {
-            let str = url.substr(1);
-            strs = str.split("&");
-            for(let i = 0; i < strs.length; i ++) {
-                query[strs[i].split("=")[0]]=unescape(strs[i].split("=")[1]);
-            }
-        }
+        const search = location.search.includes('?') ? location.search.slice(1) : false;
 
-        let result = key ? query[key] : query;
-        return result;
+        if(search){
+            let query = {};
+            let searchArr = search.split('&');
+
+            searchArr.map(item => {
+                query[item.split('=')[0]] = item.split('=')[1]
+            })
+
+            let result = key ? query[key] : query;
+            return result;
+        }
     },
     getTimes(d = new Date()) {
         return Math.round(d / 1000);
