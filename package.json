@@ -2,20 +2,20 @@
   "name": "kit-es6",
   "description": "kit util",
   "author": "liusm",
-  "version": "1.0.8",
-  "main": "script/kit.js",
+  "version": "1.1.0",
+  "main": "dist/kit.js",
   "scripts": {
     "test": "echo test",
     "build": "webpack"
   },
   "devDependencies": {
-    "babel-loader": "^8.1.0",
-    "uglifyjs-webpack-plugin": "^2.2.0",
-    "webpack": "^4.42.1",
-    "webpack-cli": "^3.3.11",
     "@babel/core": "^7.9.0",
     "@babel/plugin-proposal-class-properties": "^7.8.3",
-    "@babel/preset-env": "^7.9.0"
+    "@babel/preset-env": "^7.9.0",
+    "babel-loader": "^8.1.0",
+    "uglifyjs-webpack-plugin": "^2.2.0",
+    "webpack": "^4.46.0",
+    "webpack-cli": "^3.3.11"
   },
   "dependencies": {}
 }
